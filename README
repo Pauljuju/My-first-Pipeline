@@ -1,1 +1,24 @@
 A simple jenkins pipeline to verify if the docker slave configuration is working as expected.
+
+🚀 Jenkins Pipeline with Docker: Node.js Version Test
+
+
+📋 What This Pipeline Does
+✅ Uses Docker to create a lightweight container running Node.js version 16 (alpine edition).
+
+✅ Runs a simple shell command to print the installed Node.js version.
+
+✅ Helps verify that the Docker image and Node.js environment are working correctly.
+
+
+🧱 Pipeline Breakdown
+🔹 agent { docker { image 'node:16-alpine' } }
+This tells Jenkins to spin up a Docker container using the official Node.js v16 (Alpine) image to run the steps inside the pipeline.
+
+🔹 stage('Test')
+A stage is a section in the pipeline. In this case, it's named "Test" and is used to perform a single task.
+
+🔹 sh 'node --version'
+Runs the shell command node --version inside the container, which prints out the installed Node.js version Example,
+
+v16.20.0.
